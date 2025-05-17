@@ -1,0 +1,6 @@
+[submodule "MidEngine/vendor/spdlog"]
+	path = MidEngine/vendor/spdlog
+	url = https://github.com/gabime/spdlog
+[submodule "MidEngine/vendor/GLFW"]
+	path = MidEngine/vendor/GLFW
+	url = https://github.com/terrellhu/glfw.git
