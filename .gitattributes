@@ -1,0 +1,33 @@
+# ================================
+# 跨平台 C++ 项目 Git 换行符规范
+# ================================
+
+# C/C++ 源码文件统一用 LF（跨平台友好）
+*.cpp text eol=lf
+*.c   text eol=lf
+*.h   text eol=lf
+*.hpp text eol=lf
+*.inl text eol=lf
+
+# Visual Studio 工程文件用 CRLF（保持兼容性）
+*.vcxproj text eol=crlf
+*.vcxproj.filters text eol=crlf
+*.sln text eol=crlf
+*.props text eol=crlf
+*.targets text eol=crlf
+
+# CMake 脚本统一 LF
+CMakeLists.txt text eol=lf
+*.cmake text eol=lf
+
+# 脚本文件统一 LF
+*.sh text eol=lf
+*.ps1 text eol=lf
+*.bat text eol=crlf
+
+# Markdown、文档类统一 LF
+*.md text eol=lf
+*.txt text eol=lf
+
+# 通用默认策略（文件类型没匹配到时）
+* text=auto
