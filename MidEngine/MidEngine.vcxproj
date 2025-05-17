@@ -159,11 +159,14 @@ IF EXIST ..\bin\Dist-windows-x86_64\MidEngine\MidEngine.dll\ (xcopy /Q /E /Y /I 
     <ClInclude Include="src\MidEngine\Events\KeyEvent.h" />
     <ClInclude Include="src\MidEngine\Events\MouseEvent.h" />
     <ClInclude Include="src\MidEngine\Log.h" />
+    <ClInclude Include="src\MidEngine\Window.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\mepch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\MidEngine\Application.cpp" />
     <ClCompile Include="src\MidEngine\Log.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\mepch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
