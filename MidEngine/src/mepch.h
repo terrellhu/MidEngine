@@ -12,6 +12,7 @@
 #include <unordered_set>
 
 #include "MidEngine/Log.h"
+#include "MidEngine/LogFormatter.h"
 
 #ifdef ME_PLATFORM_WINDOWS
     #include <Windows.h>

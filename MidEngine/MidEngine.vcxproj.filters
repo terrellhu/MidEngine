@@ -37,7 +37,16 @@
     <ClInclude Include="src\MidEngine\Events\MouseEvent.h">
       <Filter>MidEngine\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\MidEngine\Layer.h">
+      <Filter>MidEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MidEngine\LayerStack.h">
+      <Filter>MidEngine</Filter>
+    </ClInclude>
     <ClInclude Include="src\MidEngine\Log.h">
+      <Filter>MidEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MidEngine\LogFormatter.h">
       <Filter>MidEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\MidEngine\Window.h">
@@ -50,6 +59,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\MidEngine\Application.cpp">
+      <Filter>MidEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MidEngine\Layer.cpp">
+      <Filter>MidEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MidEngine\LayerStack.cpp">
       <Filter>MidEngine</Filter>
     </ClCompile>
     <ClCompile Include="src\MidEngine\Log.cpp">

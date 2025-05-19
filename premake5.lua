@@ -15,8 +15,10 @@ startproject "Sandbox"
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "MidEngine/vendor/GLFW/include"
+IncludeDir["Glad"] = "MidEngine/vendor/Glad/include"
 
 include "MidEngine/vendor/GLFW"
+include "MidEngine/vendor/Glad"
 
 project "MidEngine"
     location "MidEngine"
@@ -39,24 +41,27 @@ project "MidEngine"
     {
         "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include",
-        "%{IncludeDir.GLFW}"
+        "%{IncludeDir.GLFW}",
+        "%{IncludeDir.Glad}"
     }
 
     links 
     {
         "GLFW",
+        "Glad",
         "opengl32.lib"
     }
 
     filter "system:windows"
         cppdialect "C++17"
-        staticruntime "On"
+        staticruntime "Off"
         systemversion "latest"
 
         defines
         {
             "ME_PLATFORM_WINDOWS",
-            "ME_BUILD_DLL"
+            "ME_BUILD_DLL",
+            "GLFW_INCLUDE_NONE"
         }
 
         postbuildcommands
@@ -67,14 +72,17 @@ project "MidEngine"
     
     filter "configurations:Debug"
         defines "ME_DEBUG"
+        runtime "Debug"
         symbols "On"
 
     filter "configurations:Release"
         defines "ME_RELEASE"
+        runtime "Release"
         symbols "On"
 
     filter "configurations:Dist"
         defines "ME_DIST"
+        runtime "Release"
         symbols "On"
 
     filter { "system:windows" }
@@ -107,7 +115,7 @@ project "Sandbox"
 
     filter "system:windows"
         cppdialect "C++17"
-        staticruntime "On"
+        staticruntime "Off"
         systemversion "latest"
 
         defines
@@ -117,14 +125,17 @@ project "Sandbox"
 
     filter "configurations:Debug"
         defines "ME_DEBUG"
+        runtime "Debug"
         symbols "On"
 
     filter "configurations:Release"
         defines "ME_RELEASE"
+        runtime "Release"
         symbols "On"
 
     filter "configurations:Dist"
         defines "ME_DIST"
+        runtime "Release"
         symbols "On"
 
     filter { "system:windows" }
