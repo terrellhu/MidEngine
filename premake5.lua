@@ -16,9 +16,11 @@ startproject "Sandbox"
 IncludeDir = {}
 IncludeDir["GLFW"] = "MidEngine/vendor/GLFW/include"
 IncludeDir["Glad"] = "MidEngine/vendor/Glad/include"
+IncludeDir["ImGui"] = "MidEngine/vendor/imgui"
 
 include "MidEngine/vendor/GLFW"
 include "MidEngine/vendor/Glad"
+include "MidEngine/vendor/imgui"
 
 project "MidEngine"
     location "MidEngine"
@@ -42,13 +44,15 @@ project "MidEngine"
         "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include",
         "%{IncludeDir.GLFW}",
-        "%{IncludeDir.Glad}"
+        "%{IncludeDir.Glad}",
+        "%{IncludeDir.ImGui}"
     }
 
     links 
     {
         "GLFW",
         "Glad",
+        "ImGui",
         "opengl32.lib"
     }
 

@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>mepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ME_PLATFORM_WINDOWS;ME_BUILD_DLL;GLFW_INCLUDE_NONE;ME_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -105,7 +105,7 @@ IF EXIST ..\bin\Debug-windows-x86_64\MidEngine\MidEngine.dll\ (xcopy /Q /E /Y /I
       <PrecompiledHeaderFile>mepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ME_PLATFORM_WINDOWS;ME_BUILD_DLL;GLFW_INCLUDE_NONE;ME_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -130,7 +130,7 @@ IF EXIST ..\bin\Release-windows-x86_64\MidEngine\MidEngine.dll\ (xcopy /Q /E /Y 
       <PrecompiledHeaderFile>mepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ME_PLATFORM_WINDOWS;ME_BUILD_DLL;GLFW_INCLUDE_NONE;ME_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -158,19 +158,23 @@ IF EXIST ..\bin\Dist-windows-x86_64\MidEngine\MidEngine.dll\ (xcopy /Q /E /Y /I 
     <ClInclude Include="src\MidEngine\Events\Event.h" />
     <ClInclude Include="src\MidEngine\Events\KeyEvent.h" />
     <ClInclude Include="src\MidEngine\Events\MouseEvent.h" />
+    <ClInclude Include="src\MidEngine\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\MidEngine\Layer.h" />
     <ClInclude Include="src\MidEngine\LayerStack.h" />
     <ClInclude Include="src\MidEngine\Log.h" />
     <ClInclude Include="src\MidEngine\LogFormatter.h" />
     <ClInclude Include="src\MidEngine\Window.h" />
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\mepch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\MidEngine\Application.cpp" />
+    <ClCompile Include="src\MidEngine\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\MidEngine\Layer.cpp" />
     <ClCompile Include="src\MidEngine\LayerStack.cpp" />
     <ClCompile Include="src\MidEngine\Log.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\mepch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
@@ -182,6 +186,9 @@ IF EXIST ..\bin\Dist-windows-x86_64\MidEngine\MidEngine.dll\ (xcopy /Q /E /Y /I 
     </ProjectReference>
     <ProjectReference Include="vendor\Glad\Glad.vcxproj">
       <Project>{BDD6857C-A90D-870D-52FA-6C103E10030F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="vendor\imgui\ImGui.vcxproj">
+      <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

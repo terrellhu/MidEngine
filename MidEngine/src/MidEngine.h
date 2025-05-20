@@ -4,6 +4,7 @@
 #include "MidEngine/Application.h"
 #include "MidEngine/Layer.h"
 #include "MidEngine/Log.h"
+#include "MidEngine/ImGui/ImGuiLayer.h"
 
 // Entry Point
 #include "MidEngine/EntryPoint.h"
