@@ -95,8 +95,7 @@
       <ImportLibrary>..\bin\Debug-windows-x86_64\MidEngine\MidEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir "..\bin\Debug-windows-x86_64\Sandbox"
-IF EXIST ..\bin\Debug-windows-x86_64\MidEngine\MidEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\MidEngine\MidEngine.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\MidEngine\MidEngine.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Debug-windows-x86_64\MidEngine\MidEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\MidEngine\MidEngine.dll "..\bin\Debug-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\MidEngine\MidEngine.dll "..\bin\Debug-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -120,8 +119,7 @@ IF EXIST ..\bin\Debug-windows-x86_64\MidEngine\MidEngine.dll\ (xcopy /Q /E /Y /I
       <ImportLibrary>..\bin\Release-windows-x86_64\MidEngine\MidEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir "..\bin\Release-windows-x86_64\Sandbox"
-IF EXIST ..\bin\Release-windows-x86_64\MidEngine\MidEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\MidEngine\MidEngine.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\MidEngine\MidEngine.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Release-windows-x86_64\MidEngine\MidEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\MidEngine\MidEngine.dll "..\bin\Release-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\MidEngine\MidEngine.dll "..\bin\Release-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
@@ -145,8 +143,7 @@ IF EXIST ..\bin\Release-windows-x86_64\MidEngine\MidEngine.dll\ (xcopy /Q /E /Y 
       <ImportLibrary>..\bin\Dist-windows-x86_64\MidEngine\MidEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir "..\bin\Dist-windows-x86_64\Sandbox"
-IF EXIST ..\bin\Dist-windows-x86_64\MidEngine\MidEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\MidEngine\MidEngine.dll ..\bin\Dist-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\MidEngine\MidEngine.dll ..\bin\Dist-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Dist-windows-x86_64\MidEngine\MidEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\MidEngine\MidEngine.dll "..\bin\Dist-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\MidEngine\MidEngine.dll "..\bin\Dist-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -159,12 +156,15 @@ IF EXIST ..\bin\Dist-windows-x86_64\MidEngine\MidEngine.dll\ (xcopy /Q /E /Y /I 
     <ClInclude Include="src\MidEngine\Events\KeyEvent.h" />
     <ClInclude Include="src\MidEngine\Events\MouseEvent.h" />
     <ClInclude Include="src\MidEngine\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\MidEngine\Input.h" />
     <ClInclude Include="src\MidEngine\Layer.h" />
     <ClInclude Include="src\MidEngine\LayerStack.h" />
     <ClInclude Include="src\MidEngine\Log.h" />
     <ClInclude Include="src\MidEngine\LogFormatter.h" />
     <ClInclude Include="src\MidEngine\Window.h" />
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLLoader.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\mepch.h" />
   </ItemGroup>
@@ -175,6 +175,7 @@ IF EXIST ..\bin\Dist-windows-x86_64\MidEngine\MidEngine.dll\ (xcopy /Q /E /Y /I 
     <ClCompile Include="src\MidEngine\LayerStack.cpp" />
     <ClCompile Include="src\MidEngine\Log.cpp" />
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\mepch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>

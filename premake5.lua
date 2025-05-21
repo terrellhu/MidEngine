@@ -26,6 +26,7 @@ project "MidEngine"
     location "MidEngine"
     kind "SharedLib"
     language "C++"
+    staticruntime "Off"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -58,7 +59,6 @@ project "MidEngine"
 
     filter "system:windows"
         cppdialect "C++17"
-        staticruntime "Off"
         systemversion "latest"
 
         defines
@@ -70,8 +70,8 @@ project "MidEngine"
 
         postbuildcommands
         {
-            ('mkdir "..\\bin\\' .. outputdir .. '\\Sandbox"'),
-            ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+            -- ('mkdir "..\\bin\\' .. outputdir .. '\\Sandbox"'),
+            ("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
         }
     
     filter "configurations:Debug"
@@ -96,6 +96,7 @@ project "Sandbox"
     location "Sandbox"
     kind "ConsoleApp"
     language "C++"
+    staticruntime "Off"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -119,7 +120,6 @@ project "Sandbox"
 
     filter "system:windows"
         cppdialect "C++17"
-        staticruntime "Off"
         systemversion "latest"
 
         defines
