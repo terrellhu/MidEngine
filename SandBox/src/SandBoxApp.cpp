@@ -11,11 +11,17 @@ public:
 	void OnUpdate() override
 	{
 		//ME_INFO("ExampleLayer::Update");
+		if (ME::Input::IsKeyPressed(ME_KEY_TAB))
+			ME_INFO("Tab key is pressed");
 	}
 
 	void OnEvent(ME::Event& event) override
 	{
-		ME_INFO("{0}", event);
+		if (event.GetEventType() == ME::EventType::KeyPressed)
+		{
+			ME::KeyPressedEvent& e = (ME::KeyPressedEvent&)event;
+            ME_INFO("{0}", (char)e.GetKeyCode());
+		}
 	}
 };
 

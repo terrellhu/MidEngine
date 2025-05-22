@@ -157,10 +157,12 @@
     <ClInclude Include="src\MidEngine\Events\MouseEvent.h" />
     <ClInclude Include="src\MidEngine\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\MidEngine\Input.h" />
+    <ClInclude Include="src\MidEngine\KeyCodes.h" />
     <ClInclude Include="src\MidEngine\Layer.h" />
     <ClInclude Include="src\MidEngine\LayerStack.h" />
     <ClInclude Include="src\MidEngine\Log.h" />
     <ClInclude Include="src\MidEngine\LogFormatter.h" />
+    <ClInclude Include="src\MidEngine\MouseButtonCodes.h" />
     <ClInclude Include="src\MidEngine\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLLoader.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />

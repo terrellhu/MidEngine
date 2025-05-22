@@ -71,6 +71,10 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\mepch.h" />
+    <ClInclude Include="src\MidEngine\Input.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="src\MidEngine\KeyCodes.h" />
+    <ClInclude Include="src\MidEngine\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\MidEngine\Application.cpp">
@@ -95,5 +99,6 @@
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\mepch.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>
