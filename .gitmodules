@@ -7,3 +7,6 @@
 [submodule "MidEngine/vendor/imgui"]
 	path = MidEngine/vendor/imgui
 	url = https://github.com/terrellhu/imgui.git
+[submodule "MidEngine/vendor/glm"]
+	path = MidEngine/vendor/glm
+	url = https://github.com/g-truc/glm.git
